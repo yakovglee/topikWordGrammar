@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/topikWordGrammar/static/css/main.f855e6bc.css",
+    "main.js": "/topikWordGrammar/static/js/main.65e44f32.js",
+    "static/js/453.80efc53e.chunk.js": "/topikWordGrammar/static/js/453.80efc53e.chunk.js",
+    "index.html": "/topikWordGrammar/index.html",
+    "main.f855e6bc.css.map": "/topikWordGrammar/static/css/main.f855e6bc.css.map",
+    "main.65e44f32.js.map": "/topikWordGrammar/static/js/main.65e44f32.js.map",
+    "453.80efc53e.chunk.js.map": "/topikWordGrammar/static/js/453.80efc53e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.65e44f32.js"
+  ]
+}
