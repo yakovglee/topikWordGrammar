@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Card } from 'antd';
-import { Divider } from 'antd';
 
 import CardWord from './CardWord';
 
@@ -28,6 +27,26 @@ const tabListNoTitle = [
   {
     key: '대명사',
     label: '대명사',
+  },
+  {
+    key: '수사',
+    label: '수사',
+  },
+  {
+    key: '관형사',
+    label: '관형사',
+  },
+  {
+    key: '감탄사',
+    label: '감탄사',
+  },
+  {
+    key: '접사',
+    label: '접사',
+  },
+  {
+    key: '줄어든말',
+    label: '줄어든말',
   },
 ];
 
