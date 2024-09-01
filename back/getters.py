@@ -104,5 +104,4 @@ def get_data_from_dict():
                     else fill_data_sense_dict(entry, lvl, part)
                 )
                 resp.append(entry_data)
-
     return resp
