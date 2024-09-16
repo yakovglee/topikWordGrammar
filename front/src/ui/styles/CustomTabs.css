@@ -4,6 +4,11 @@
     align-items: center;
     height: 64px;
   }
+
+  .custom-tab-bar .ant-tabs-nav {
+    padding: 0;
+    margin: 0;
+  }
   
   .custom-tab-bar .ant-tabs-tab {
     display: flex;
@@ -19,6 +24,10 @@
     transition: background-color 0.3s, color 0.3s, border 0.3s;
     cursor: pointer;
     color: rgb(0, 0, 0) !important;
+  }
+
+  .custom-tab-bar .ant-tabs-tab {
+    margin: 0px 0px 0px 10px !important;
   }
 
   .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
