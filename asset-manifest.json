@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/topikWordGrammar/static/css/main.cfdc4f95.css",
-    "main.js": "/topikWordGrammar/static/js/main.c4b78929.js",
+    "main.css": "/topikWordGrammar/static/css/main.f9f236d2.css",
+    "main.js": "/topikWordGrammar/static/js/main.ba6e31b5.js",
     "static/js/453.80efc53e.chunk.js": "/topikWordGrammar/static/js/453.80efc53e.chunk.js",
     "index.html": "/topikWordGrammar/index.html",
-    "main.cfdc4f95.css.map": "/topikWordGrammar/static/css/main.cfdc4f95.css.map",
-    "main.c4b78929.js.map": "/topikWordGrammar/static/js/main.c4b78929.js.map",
+    "main.f9f236d2.css.map": "/topikWordGrammar/static/css/main.f9f236d2.css.map",
+    "main.ba6e31b5.js.map": "/topikWordGrammar/static/js/main.ba6e31b5.js.map",
     "453.80efc53e.chunk.js.map": "/topikWordGrammar/static/js/453.80efc53e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cfdc4f95.css",
-    "static/js/main.c4b78929.js"
+    "static/css/main.f9f236d2.css",
+    "static/js/main.ba6e31b5.js"
   ]
 }
