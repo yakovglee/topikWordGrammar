@@ -1,11 +1,11 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
 
-import { fetchSheetData } from './service/getters';
+// import { fetchSheetData } from './service/getters';
 
-import CustomTabs from './ui/CustomTabs';
-import CardContent from './ui/CardContent.js';
-import NewCard from './ui/NewCard.js';
+import CustomTabs from './ui/CustomTabs.js';
+// import CardContent from './ui/CardContent.js';
+// import NewCard from './ui/NewCard.js';
 
 function App() {
   const [data, setData] = useState([]);
@@ -68,10 +68,12 @@ function App() {
     
     <>
         
-        <CustomTabs tabs={tabsLvl} className="tabs-level" />
+        {/* <CustomTabs tabs={tabsLvl} className="tabs-level" />
         <CustomTabs tabs={tabsPart} className="tabs-part" />
 
-        <NewCard />
+        <NewCard /> */}
+        <CustomTabs tabs={tabsPart} className="tabs-part" />
+        <CustomTabs tabs={tabsLvl} className="tabs-level" />
 
     </>
     
