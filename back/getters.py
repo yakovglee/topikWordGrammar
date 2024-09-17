@@ -23,6 +23,7 @@ def get_dictionary(word, pos):
     params = {
         'q': word,
         'key': API_KEY_DICT,
+        'sort': 'popular',
         'translated': 'y',
         'trans_lang': '10,1',
         'advanced': 'y',
