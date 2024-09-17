@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Card, Carousel } from 'antd';
 
 import './styles/NewCard.css'
 
@@ -7,19 +7,26 @@ const Index = ({data}) => {
 
     return (
         <div className='custom-card'>
-        <Card>
-            <p className="textTitle">{data.word}</p>
-            
-            <div className="dfn_content">
-                <ul>
-                    <li className='main-dfn'>{data.dfn[0]}</li>
-                    <li>{data.trans_dfn[0]}</li>
-                    <li>{data.trans_dfn[1]}</li>                   
-                </ul>
+            <Card>
+                <p className="textTitle">{data.word}</p>
+                
+                    <div className="dfn_content">
+                        <Carousel dots={true}>
+                            {data.dfn.map((dfn, idx) => (
+                                <div key={`definition-${idx}`} className='carousel-item'>
+                                    <ul>
+                                        <li className='main-dfn'>{dfn}</li>
+                                        <li>{data.trans_dfn[2*idx]}</li>
+                                        <li>{data.trans_dfn[2*idx+1]}</li>
+                                    </ul>
+                                </div>
+                            ))}
+                        </Carousel>
+
+                    </div>
                 
 
-            </div>
-        </Card>
+            </Card>
         </div>
     )
 }   
