@@ -1,53 +1,62 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import CardContent from './ui/CardContent';
+import { Spin } from 'antd';
 
 import { fetchSheetData } from './service/getters';
-import CardWord from './ui/CardWord';
+import { tabsLvl, tabsPart } from './service/data.js';
 
-import CustomTabs from './ui/CustomTabs';
+import CustomTabs from './ui/CustomTabs.js';
+import NewCard from './ui/NewCard.js';
 
 function App() {
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
+  const [selectedTabLvl, setSelectedTabLvl] = useState('1 급');
+  const [selectedTabPart, setSelectedTabPart] = useState('명사');
+  const [filteredWords, setFilteredWords] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetchSheetData().then((data) => {
-  //     setData(data);
-  //   }).catch(error => {
-  //     console.error("Ошибка при загрузке данных:", error);
-  //   });
-  // }, []);
+  useEffect(() => {
+    fetchSheetData().then((data) => {
+      setData(data);
+    }).catch(error => {
+      console.error("Ошибка при загрузке данных:", error);
+    }).finally(() => {
+      setLoading(false);
+  });
+  }, []);
 
-  const tabsLvl = [
-    { tab: "TOPIK I", key: "1"},
-    { tab: "TOPIK II", key: "2"}
-  ];
+  useEffect(() => {
+    if (data.length) {
+      const filtered = data.filter(word =>
+        word.lvl === parseInt(selectedTabLvl) && word.part === selectedTabPart
+      );
+      setFilteredWords(filtered);
+    }
+  }, [data, selectedTabLvl, selectedTabPart]);
 
-  const tabsPart = [
-    { tab: "명사"},
-    { tab: "형용사"},
-    { tab: "동사"},
-    { tab: "명사1"},
-    { tab: "형용사1"},
-    { tab: "동사1"},
-    { tab: "명사"},
-    { tab: "형용사"},
-    { tab: "동사"},
-    { tab: "명사1"},
-    { tab: "형용사1"},
-    { tab: "동사1"},
-  ];
-  
+  const handleTabChangeLvl = (key) => {
+    setSelectedTabLvl(key);
+  };
+
+  const handleTabChangePart = (key) => {
+    setSelectedTabPart(key);
+  };
+
+
   return (
-    
-    
     <>
-        {/* // <CardContent data={data} /> */}
-        <CustomTabs tabs={tabsLvl} className="tabs-level" />
-        <CustomTabs tabs={tabsPart} className="tabs-part" />
+      <CustomTabs tabs={tabsLvl} className="tabs-level" onChange={handleTabChangeLvl} />
+      <CustomTabs tabs={tabsPart} className="tabs-part" onChange={handleTabChangePart} />
+      
+      { loading ? (<Spin size='large'/>) : (
+        filteredWords.map((word) =>(
+          <NewCard data={word} />
+        ))
+      )
+      }
+
     </>
-    
-  )
+  );
 }
 
 export default App;
