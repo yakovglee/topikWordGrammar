@@ -1,14 +1,16 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // import { fetchSheetData } from './service/getters';
+import { tabsLvl, tabsPart } from './service/data.js';
 
 import CustomTabs from './ui/CustomTabs.js';
-// import CardContent from './ui/CardContent.js';
-// import NewCard from './ui/NewCard.js';
+import NewCard from './ui/NewCard.js';
 
 function App() {
   const [data, setData] = useState([]);
+  const [selectedTabLvl, setSelectedTabLvl] = useState('1 급');
+  const [selectedTabPart, setSelectedTabPart] = useState('명사');
 
   // useEffect(() => {
   //   fetchSheetData().then((data) => {
@@ -18,66 +20,24 @@ function App() {
   //   });
   // }, []);
 
-  const tabsLvl = [
-    { tab: "1 급"},
-    { tab: "2 급"},
-    { tab: "3 급"},
-    { tab: "4 급"},
-    { tab: "5 급"},
-    { tab: "6 급"},
-  ];
+  const handleTabChangeLvl = (key) => {
+    setSelectedTabLvl(key);
+  };
 
-  const tabsPart = [
-    {
-      tab: '명사',
-    },
-    {
-      tab: '형용사',
-    },
-    {
-      tab: '동사',
-    },
-    {
-      tab: '부사',
-    },
-    {
-      tab: '의존명사',
-    },
-    {
-      tab: '대명사',
-    },
-    {
-      tab: '수사',
-    },
-    {
-      tab: '관형사',
-    },
-    {
-      tab: '감탄사',
-    },
-    {
-      tab: '접사',
-    },
-    {
-      tab: '줄어든말',
-    },
-  ];
-  
+  const handleTabChangePart = (key) => {
+    setSelectedTabPart(key);
+  };
+
   return (
-    
-    
     <>
-        
-        {/* <CustomTabs tabs={tabsLvl} className="tabs-level" />
-        <CustomTabs tabs={tabsPart} className="tabs-part" />
-
-        <NewCard /> */}
-        <CustomTabs tabs={tabsPart} className="tabs-part" />
-        <CustomTabs tabs={tabsLvl} className="tabs-level" />
+      <CustomTabs tabs={tabsLvl} className="tabs-level" onChange={handleTabChangeLvl} />
+      <CustomTabs tabs={tabsPart} className="tabs-part" onChange={handleTabChangePart} />
+      
+      <NewCard /> 
+      <NewCard /> 
 
     </>
-    
-  )
+  );
 }
 
 export default App;
