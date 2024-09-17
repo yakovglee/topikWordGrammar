@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Spin } from 'antd';
 
 import { fetchSheetData } from './service/getters';
-import { tabsLvl, tabsPart } from './service/data.js';
+import { tabsLvl, tabsPart, data } from './service/data.js';
 
 import CustomTabs from './ui/CustomTabs.js';
 import NewCard from './ui/NewCard.js';
@@ -54,6 +54,7 @@ function App() {
         ))
       )
       }
+        
 
     </>
   );

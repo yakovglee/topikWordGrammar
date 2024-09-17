@@ -38,3 +38,23 @@
     font-weight: 700;
     margin-bottom: 8px;
 }
+
+.dfn_content .ant-carousel .slick-dots li button {
+    width: 5px; 
+    height: 5px; 
+    border-radius: 50%; 
+    background: #000; 
+    opacity: 1;
+  }
+  
+  .dfn_content .ant-carousel .slick-dots li.slick-active button {
+    background: #1890ff;
+  }
+  
+  .dfn_content .ant-carousel .slick-dots {
+    bottom: -10px; 
+  }
+  
+  .dfn_content .ant-carousel .slick-dots li {
+    margin: 0 0px; 
+  }
