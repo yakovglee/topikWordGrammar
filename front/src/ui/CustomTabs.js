@@ -5,6 +5,7 @@ import "./styles/CustomTabs.css";
 const { TabPane } = Tabs;
 
 const Index = ({ tabs, className, onChange }) => (
+
   <div>
     <Tabs className={`custom-tab-bar ${className}`} onChange={onChange}>
       {tabs.map((tab) => (
@@ -12,6 +13,8 @@ const Index = ({ tabs, className, onChange }) => (
       ))}
     </Tabs>
   </div>
+  
+
 );
 
 export default Index;
