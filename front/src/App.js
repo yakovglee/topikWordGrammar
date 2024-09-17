@@ -1,14 +1,14 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import CardContent from './ui/CardContent';
 
 import { fetchSheetData } from './service/getters';
-import CardWord from './ui/CardWord';
 
 import CustomTabs from './ui/CustomTabs';
+import CardContent from './ui/CardContent.js';
+import NewCard from './ui/NewCard.js';
 
 function App() {
-  // const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
 
   // useEffect(() => {
   //   fetchSheetData().then((data) => {
@@ -19,32 +19,60 @@ function App() {
   // }, []);
 
   const tabsLvl = [
-    { tab: "TOPIK I", key: "1"},
-    { tab: "TOPIK II", key: "2"}
+    { tab: "1 급"},
+    { tab: "2 급"},
+    { tab: "3 급"},
+    { tab: "4 급"},
+    { tab: "5 급"},
+    { tab: "6 급"},
   ];
 
   const tabsPart = [
-    { tab: "명사"},
-    { tab: "형용사"},
-    { tab: "동사"},
-    { tab: "명사1"},
-    { tab: "형용사1"},
-    { tab: "동사1"},
-    { tab: "명사"},
-    { tab: "형용사"},
-    { tab: "동사"},
-    { tab: "명사1"},
-    { tab: "형용사1"},
-    { tab: "동사1"},
+    {
+      tab: '명사',
+    },
+    {
+      tab: '형용사',
+    },
+    {
+      tab: '동사',
+    },
+    {
+      tab: '부사',
+    },
+    {
+      tab: '의존명사',
+    },
+    {
+      tab: '대명사',
+    },
+    {
+      tab: '수사',
+    },
+    {
+      tab: '관형사',
+    },
+    {
+      tab: '감탄사',
+    },
+    {
+      tab: '접사',
+    },
+    {
+      tab: '줄어든말',
+    },
   ];
   
   return (
     
     
     <>
-        {/* // <CardContent data={data} /> */}
+        
         <CustomTabs tabs={tabsLvl} className="tabs-level" />
         <CustomTabs tabs={tabsPart} className="tabs-part" />
+
+        <NewCard />
+
     </>
     
   )
