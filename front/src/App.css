@@ -36,12 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-body {
-  overflow: auto;
-  scrollbar-width: none;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}

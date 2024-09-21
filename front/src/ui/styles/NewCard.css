@@ -1,3 +1,24 @@
+.word_container {
+  position: relative;
+  text-align: center; 
+}
+
+.text-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  position: relative;
+}
+
+.translate-icon {
+  width: 16px; 
+  height: 16px; 
+  margin: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+}
+
 .custom-card .ant-card {
     width: 350px;
     height: auto;
@@ -11,6 +32,7 @@
 }
 
 .custom-card .textTitle {
+    cursor: pointer;
     margin: 0;
     padding-top: 20px;
     text-align: center;
@@ -42,9 +64,10 @@
 .dfn_content .ant-carousel .slick-dots li button {
     width: 5px; 
     height: 5px; 
-    border-radius: 50%; 
+    border-radius: 100%; 
     background: #000; 
     opacity: 1;
+    display: flex;
   }
   
   .dfn_content .ant-carousel .slick-dots li.slick-active button {
@@ -53,7 +76,9 @@
   
   .dfn_content .ant-carousel .slick-dots {
     bottom: -10px; 
-  }
+    left: 50%;
+    transform: translateX(-50%);
+}
   
   .dfn_content .ant-carousel .slick-dots li {
     margin: 0 0px; 
