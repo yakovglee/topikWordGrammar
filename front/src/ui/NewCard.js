@@ -4,26 +4,33 @@ import { Card, Carousel } from 'antd';
 
 import './styles/NewCard.css'
 
+import png from './assets/switch.png'
+
 
 const Index = ({data}) => {
 
     const [wordId, setWordId] = useState(0);
-    const [isRevere, setisRevere] = useState(false);
+    const [isReverse, setisReverse] = useState(false);
 
     const handleCarouselChange = (current) => {
         setWordId(2 * current);
-        setisRevere(false);
+        setisReverse(false);
     };
 
     const handleChangeReverse = () => {
-        setisRevere(prev => !prev);
+        setisReverse(prev => !prev);
     };
     
 
     return (
         <div className='custom-card'>
             <Card>
-                <p className="textTitle"  onClick={handleChangeReverse}>{ isRevere ? data.trans_word[wordId] : data.word }</p>
+            <div className='word_container'>
+                <div className="text-container" onClick={handleChangeReverse}>
+                    <p className="textTitle">{isReverse ? data.trans_word[wordId] : data.word}</p>
+                    <img src={png} alt="Translate" className="translate-icon" />
+                </div>
+            </div>
                 
                     <div className="dfn_content">
                         <Carousel dots={true} afterChange={handleCarouselChange}>

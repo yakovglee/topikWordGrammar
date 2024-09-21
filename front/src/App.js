@@ -15,6 +15,7 @@ function App() {
   const [filteredWords, setFilteredWords] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     fetchSheetData().then((data) => {
       setData(data);
