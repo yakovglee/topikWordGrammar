@@ -42,9 +42,10 @@
 .dfn_content .ant-carousel .slick-dots li button {
     width: 5px; 
     height: 5px; 
-    border-radius: 50%; 
+    border-radius: 100%; 
     background: #000; 
     opacity: 1;
+    display: flex;
   }
   
   .dfn_content .ant-carousel .slick-dots li.slick-active button {
@@ -53,7 +54,9 @@
   
   .dfn_content .ant-carousel .slick-dots {
     bottom: -10px; 
-  }
+    left: 50%;
+    transform: translateX(-50%);
+}
   
   .dfn_content .ant-carousel .slick-dots li {
     margin: 0 0px; 
