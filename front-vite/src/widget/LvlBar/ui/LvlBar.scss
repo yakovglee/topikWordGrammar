@@ -1,0 +1,8 @@
+@use '../../../shared/styles/TabsStyle.scss' as lvlbar with (
+    $nav-bg-color: rgba(212, 198, 252, 1),
+    $tab-active-color: rgba(165, 135, 254, 1)
+);
+
+.lvlbar-tabs {
+    @include lvlbar.custom-tabs; 
+}

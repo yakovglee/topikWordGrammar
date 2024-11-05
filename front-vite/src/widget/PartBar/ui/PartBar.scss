@@ -1,0 +1,8 @@
+@use '../../../shared/styles/TabsStyle.scss' as tabbar with (
+    $nav-bg-color: rgba(196, 232, 253, 1),
+    $tab-active-color: rgba(140, 217, 254, 1)
+);
+
+.tabbar-tabs {
+    @include tabbar.custom-tabs;
+}
