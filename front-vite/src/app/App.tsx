@@ -1,3 +1,5 @@
+import "./App.scss";
+
 import { CardWord, LvlBar, PartBar } from "../widget";
 
 function App() {
@@ -5,7 +7,11 @@ function App() {
         <>
             <LvlBar />
             <PartBar />
-            <CardWord />
+            <div className="app-container">
+                <CardWord />
+                <CardWord />
+                <CardWord />
+            </div>
         </>
     );
 }
