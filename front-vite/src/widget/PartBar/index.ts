@@ -1,1 +1,1 @@
-export { PartBar } from "./ui";
+export { PartBar } from "./ui/PartBar";

@@ -1,10 +1,11 @@
-import { LvlBar, PartBar } from "../widget";
+import { CardWord, LvlBar, PartBar } from "../widget";
 
 function App() {
     return (
         <>
             <LvlBar />
             <PartBar />
+            <CardWord />
         </>
     );
 }

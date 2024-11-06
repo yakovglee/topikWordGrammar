@@ -1,1 +1,1 @@
-export { LvlBar } from "./ui";
+export { LvlBar } from "./ui/LvlBar";
