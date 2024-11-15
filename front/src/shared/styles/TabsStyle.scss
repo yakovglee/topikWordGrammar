@@ -1,0 +1,45 @@
+$nav-bg-color: rgba(196, 232, 253, 1) !default;
+$tab-active-color: rgba(140, 217, 254, 1) !default;
+
+@mixin active-tab($active-color) {
+    background-color: $active-color !important;
+    border: 2px solid white !important;
+}
+
+@mixin custom-tabs {
+
+    .ant-tabs-nav-list {
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px 0 4px;
+        background-color: $nav-bg-color;
+        height: 64px;
+    }
+
+    .ant-tabs-tab {
+        align-items: center;
+        justify-content: center;
+
+        background-color: white;
+
+        border-radius: 500px;
+        width: 120px;
+        height: 48px;
+
+        font-size: 20px;
+        font-weight: 900;
+
+
+        &:hover {
+            @include active-tab($tab-active-color);
+        }
+    }
+
+    .ant-tabs-ink-bar {
+        display: none;
+    }
+
+    .ant-tabs-tab-active {
+        @include active-tab($tab-active-color);
+    }
+}
