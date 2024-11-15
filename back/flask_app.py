@@ -15,15 +15,14 @@ CORS(app)
 def hello_world():
     global DATA
 
-    current_date = datetime.now().strftime('%Y-%m-%d')
-    
-    if (current_date != DATA['date']):
+    current_date = datetime.now().strftime("%Y-%m-%d")
 
-        DATA['date'] = current_date
-        DATA['word'] = get_sample()
-        DATA['data'] = get_data_from_dict()
+    if current_date != DATA["date"]:
 
-        
+        DATA["date"] = current_date
+        DATA["word"] = get_sample()
+        DATA["data"] = get_data_from_dict()
+
     return jsonify(DATA)
 
 
