@@ -1,10 +1,8 @@
 import requests
 import xmltodict
+from config import config
 from const import PART_OF_SPEECH, DATA
 from utils import fill_data_sense
-from dotenv import dotenv_values
-
-config = dotenv_values(".env")
 
 API_KEY_DICT = config["API_KEY_DICT"]
 DICT_URL = config["DICT_URL"]
