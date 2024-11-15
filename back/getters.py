@@ -39,7 +39,7 @@ def get_dictionary(word, pos):
 def get_word_from_gs(pos, level, wordCount=5):
     """Fetch word data and sample from Google Sheets."""
     params = {
-        "pos": pos,
+        "part": pos,
         "level": level,
         "wordCount": wordCount,
     }
