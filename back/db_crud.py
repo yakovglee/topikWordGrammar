@@ -15,12 +15,30 @@ def get_words_by_date(date=None):
     return words
 
 
-def create_word(date, word, lvl, pos, tags=None):
+def create_word(
+    date,
+    word,
+    lvl,
+    pos,
+    link,
+    dfn,
+    dfn_ru,
+    dfn_en,
+    word_ru,
+    word_en,
+    tags=None,
+):
     word = Word(
         date=date,
         word=word,
         lvl=lvl,
         pos=pos,
+        link=link,
+        dfn=dfn,
+        dfn_ru=dfn_ru,
+        dfn_en=dfn_en,
+        word_ru=word_ru,
+        word_en=word_en,
         tags=tags,
     )
     db.session.add(word)
