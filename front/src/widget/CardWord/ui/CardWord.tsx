@@ -1,24 +1,24 @@
 import "./CardWord.scss";
 
-import { useState } from "react";
+import { useState, FC } from "react";
 
 import { Card, Carousel } from "antd";
-import { data } from "../data/data";
+import { TWordData } from "../data/types";
 
-export const CardWord = () => {
-    const [wordId, setWordId] = useState(0);
+interface CardWordProps {
+    currentWord: TWordData;
+}
+
+export const CardWord: FC<CardWordProps> = ({ currentWord }) => {
     const [isReverse, setIsReverse] = useState(false);
 
-    const handleCarouselChange = (current: number) => {
-        setWordId(2 * current);
+    const handleCarouselChange = () => {
         setIsReverse(false);
     };
 
     const handleChangeReverse = () => {
         setIsReverse((prev) => !prev);
     };
-
-    const currentWord = data[wordId] || data[0];
 
     return (
         <div className="custom-card">
@@ -30,7 +30,7 @@ export const CardWord = () => {
                     >
                         <p className="textTitle">
                             {isReverse
-                                ? currentWord.trans_word.join(", ")
+                                ? currentWord.word_ru.join(", ")
                                 : currentWord.word}
                         </p>
                     </div>
@@ -46,11 +46,11 @@ export const CardWord = () => {
                                 <ul>
                                     <li className="main-dfn">{dfn}</li>
                                     <li>
-                                        {currentWord.trans_dfn[2 * idx] ||
+                                        {currentWord.dfn_ru[idx] ||
                                             "No translation available"}
                                     </li>
                                     <li>
-                                        {currentWord.trans_dfn[2 * idx + 1] ||
+                                        {currentWord.dfn_en[idx] ||
                                             "No translation available"}
                                     </li>
                                 </ul>
