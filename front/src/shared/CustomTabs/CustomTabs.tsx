@@ -1,18 +1,16 @@
 import { Tabs, ConfigProvider } from "antd";
 import type { TabsProps } from "antd";
 
-const onChange = (key: string) => {
-    console.log(key);
-};
-
 interface CustomTabsProps {
     items: TabsProps["items"];
     styled_class_name?: string;
+    onChange?: (key: string) => void;
 }
 
 export const CustomTabs = ({
     items,
     styled_class_name = "tabs",
+    onChange,
 }: CustomTabsProps) => {
     return (
         <ConfigProvider

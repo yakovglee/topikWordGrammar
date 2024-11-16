@@ -1,10 +1,13 @@
 export type TWordData = {
     dfn: string[];
+    dfn_en: string[];
+    dfn_ru: string[];
+    id: number;
     link: string;
     lvl: number;
-    part: string;
-    total: number;
-    trans_dfn: string[];
-    trans_word: string[];
+    pos: string;
+    tags: null | string[];
     word: string;
+    word_en: string[];
+    word_ru: string[];
 };
