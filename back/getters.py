@@ -1,7 +1,6 @@
 import requests
 import xmltodict
 from config import config
-from const import PART_OF_SPEECH, DATA
 from utils import fill_data_sense
 
 API_KEY_DICT = config["API_KEY_DICT"]
