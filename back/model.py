@@ -18,4 +18,4 @@ class Word(db.Model):
     dfn_en: Mapped[list[str]] = mapped_column(JSON)
     word_ru: Mapped[list[str]] = mapped_column(JSON)
     word_en: Mapped[list[str]] = mapped_column(JSON)
-    tags: Mapped[None | list[str]] = mapped_column(JSON)
+    tags: Mapped[list[str]] = mapped_column(JSON, nullable=True)
