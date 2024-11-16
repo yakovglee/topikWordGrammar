@@ -3,7 +3,7 @@ import { TWordData } from "../../widget/CardWord/data/types";
 
 export const getData = async (
     pos: string,
-    lvl: number,
+    level: number,
     wordcount: number
 ): Promise<TWordData[]> => {
     const apiURL = `https://thejustiks.pythonanywhere.com`;
@@ -12,7 +12,7 @@ export const getData = async (
         const response = await axios.get(apiURL, {
             params: {
                 pos,
-                lvl,
+                level,
                 wordcount,
             },
         });
