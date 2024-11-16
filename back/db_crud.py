@@ -1,15 +1,21 @@
+from sqlalchemy import and_
 from db import db
 from model import Word
 from datetime import datetime
 
 
-def get_words_by_date(date=None):
-
+def get_words(date=None, lvl=1, pos="명사"):
     if date is None:
         date = datetime.now().date()
 
     words = (
-        db.session.execute(db.select(Word).filter(Word.date == date)).scalars().all()
+        db.session.execute(
+            db.select(Word).filter(
+                and_(Word.date == date, Word.lvl == lvl, Word.pos == pos)
+            )
+        )
+        .scalars()
+        .all()
     )
 
     return words
